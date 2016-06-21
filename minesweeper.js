@@ -1,24 +1,22 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
-var boardCells = document.getElementsByClassName('board')[0].children;
-
-function startGame (element) {
-    for (var i = 0; i < boardCells.length; i++) {
-    element.addListeners('click', element)
-    element.addEventListeners('hidden', showCell)
-    element.addEventListeners.preventDefault(markCell)
-}
+function startGame () {
+  var boardCells = document.getElementsByClassName('board')[0].children
+  for (var i = 0; i < boardCells.length; i++) {
+    addListeners(boardCells[i])
+  }
 }
 
-function addListeners (element) {
-    evt.target.classList.hidden('click')
-}
+  function addListeners (element) {
+    element.addEventListener ('click', showCell)
+    element.addEventListener('contextmenu', markCell)
+    }
+
 
 function showCell (evt) {
- evt.target.classList.hidden('showCell')
+  evt.target.classList.remove('hidden')
 }
 
 function markCell (evt) {
-evt.preventDefault()
-evt.marked.Class.toggle ('markcell')
-}
+  evt.preventDefault()
+ }
